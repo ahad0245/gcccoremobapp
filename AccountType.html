@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div style="display: flex;justify-content: center;" class="mobcontainer">
+
+            <div class="account-types">
+                <h3 class="h3heading">Choose Account Type</h3>
+                <div class="saving-accounttype"><img src="assets/Account Type/bank-account copy 1acc1.png" alt="">Saving Account</div>
+                <div class="current-accounttype"><img src="assets/Account Type/verified-account copy 1acc2.png" alt="">Current Account</div>
+                <div class="termdeposit-accounttype"><img src="assets/Account Type/taxes copy 1acc3.png" alt="">Term Deposit Account</div>
+                <div class="multicurrency-accounttype"><img src="assets/Account Type/taxes copy 2acc4.png" alt="">Multi Currency Account</div>
+                <div class="tax-accounttype"><img src="assets/Account Type/taxes copy 3acc5.png" alt="">Tax Account</div>
+                <div class="mastercard-accounttype"><img src="assets/Account Type/Group 1000003407acc6.png" alt="">Mastercard Account</div>
+                <div class="creditcard-accounttype"><img src="assets/Account Type/Vectoracc7.png" alt="">Credit Card Account</div>
+            </div>
+        </div></div>
+        
+    </main>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        const accountTypes = document.querySelectorAll('.account-types > div');
+        accountTypes.forEach(function(accountType) {
+            accountType.addEventListener('click', function() {
+                window.location.href = 'AcccountRegistration.html';
+            });
+            accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+        });
+    });</script>
+    <script src="script.js"></script>
+</body>
+</html>

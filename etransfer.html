@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+ .container {
+           
+            padding: 20px;
+           
+            
+        }
+        .container h1 {
+            font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 400;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+
+        }
+        .input-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+       
+        .button button:hover {
+            background-color: #218838;
+        }
+        .notifications h2 {
+    color: #1a7d3b;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.etranbutton{
+    width: 103px;
+    height: 35px;
+    border-radius: 5px;
+    background: #007438;
+    color: white;
+    border: none;
+}
+   
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="notifications"> 
+                <h2>E-Transfer</h2>
+                
+            </div>
+            <div class="etranbuttonmain">
+                <button class="etranbutton">Pending</button>
+                <button class="etranbutton">Request</button>
+                <button class="etranbutton">Settings</button>
+            </div>
+
+            <div class="container">
+                <h1>Transfer money anywhere in the world easily.</h1>
+                
+              
+                <div class="input-group">
+                    <label for="from-account">
+                        <img src="assets/transfer/3.png" alt="From Account Icon"> Transfer from
+                    </label>
+                    <input type="text" id="from-account" placeholder="Account Number">
+                </div>
+                <div class="input-group">
+                    <label for="to-account">
+                        <img src="assets/transfer/3.png" alt="To Account Icon"> Transfer to
+                    </label>
+                    <input type="text" id="to-account" placeholder="Account Number">
+                </div>
+                <div class="input-group">
+                    <label for="amount">
+                        <img src="assets/transfer/4.png" alt="Amount Icon"> Amount
+                    </label>
+                    <input type="text" id="amount" placeholder="Amount">
+                </div>
+                <p style="font-size: 13px;">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <div class="button">
+                    <button class="mobbutton" type="button">Transfer</button>
+                </div>
+            </div>
+
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>
+    document.querySelector(".mobbutton").addEventListener("click", function() {
+    window.location.href = 'sendmoney.html';
+});
+    
+    window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+            document.getElementById('userName').innerText = user.name;
+            document.getElementById('userName2').innerText = user.name;
+            document.getElementById('profilePicture').src = user.profilePicture;
+            document.getElementById('userEmail').innerText = user.email;
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };
+    
+    </script>
+</body>
+</html>

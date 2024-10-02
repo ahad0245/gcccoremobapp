@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+   .statbutton1{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    background: #007438;
+    border:1px solid #007438;
+    color: aliceblue;
+
+   }
+   .container {
+  
+    padding: 20px;
+   }
+    
+
+h2 {
+    text-align: center;
+    color: 
+    #007438;
+}
+
+h3 {
+    text-align: center;
+    color: #555;
+}
+
+.scan-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.scan-area img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.scan-area button, .next-btn, .back-btn, .submit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.next-btn, .back-btn, .submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+.next{
+    color: #007438;
+    
+font-size: 14px;
+font-weight: 600;
+
+text-align: right;
+
+
+}
+
+label {
+    display: block;
+    /* margin-top: 0px; */
+    text-align: left;
+    font-size: 14px;
+}
+
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    
+    border-bottom: 1px solid #ccc;
+}
+
+input[type="radio"] {
+    margin: 0 5px 0 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.success {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* height: 100vh; */
+    margin-top: 50%;
+}
+
+
+.success-message {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.buttonmain{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+
+            <div class="container">
+                <!-- Step 1 -->
+                <div class="step" id="step1">
+                    <h2>KYC Verification</h2>
+                    <h3>National ID</h3>
+                    <p>Scan the front side of NID card with camera</p>
+                    <div class="scan-area">
+                        <object data="assets/idcard.svg" type="image/svg+xml" ></object>
+                        <!-- <img src="front-side-placeholder.png" alt="Front Side of NID">
+                        <button>Scan Front</button> -->
+                    </div>
+                    <p>Scan the back side of NID card with camera</p>
+                    <div class="scan-area">
+                        <object data="assets/idcard.svg" type="image/svg+xml" ></object>
+                        <!-- <img src="back-side-placeholder.png" alt="Back Side of NID">
+                        <button>Scan Back</button> -->
+                    </div>
+                    <a class="next" onclick="nextStep(2)"> Next</a>
+                   
+                </div>
+        
+                <!-- Step 2 -->
+                <div class="step" id="step2" style="display:none;">
+                    <h2>KYC Verification</h2>
+                    <h3>National ID</h3>
+                    <form id="form-step2">
+                        <label>Applicant's Name</label>
+                        <input type="text" id="applicant-name" value="Hina Ansari">
+                        <label>Applicant's Father's Name</label>
+                        <input type="text" id="fathers-name" value="Hammad Khan">
+                        <label>Applicant's Mother's Name</label>
+                        <input type="text" id="mothers-name" value="Fatima Khan">
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob" value="1980-02-02">
+                        <label>Present Address</label>
+                        <input type="text" id="present-address" value="Boalia, Adda, Barura, Cumilla">
+                        <label>Permanent Address</label>
+                        <input type="text" id="permanent-address" value="Boalia, Adda, Barura, Cumilla">
+                        <label>
+                            <input type="checkbox" id="same-address"> Same as present address
+                        </label>
+                    </form>
+                <div class="buttonmain">
+                    <a class="next" onclick="prevStep(1)">Back</a>
+                    <a class="next" onclick="nextStep(3)">Next</a>
+
+
+                </div>
+                
+                </div>
+        
+                <!-- Step 3 -->
+                <div class="step" id="step3" style="display:none;">
+                    <h2>KYC Verification</h2>
+                    <h3>National ID</h3>
+                    <!-- <form id="form-step3">
+                        <label>Gender</label>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female" checked> Female
+                        <input type="radio" name="gender" value="others"> Others
+                        <label>Purpose of Transaction</label>
+                        <input type="radio" name="transaction-purpose" value="personal" checked> Personal
+                        <input type="radio" name="transaction-purpose" value="others"> Others
+                        <label>Occupation</label>
+                        <input type="radio" name="occupation" value="service" checked> Service
+                        <input type="radio" name="occupation" value="business"> Business
+                        <input type="radio" name="occupation" value="housewife"> Housewife
+                        <input type="radio" name="occupation" value="student"> Student
+                        <input type="radio" name="occupation" value="others"> Others
+                        <label>Profit</label>
+                        <input type="radio" name="profit" value="yes" checked> Yes
+                        <input type="radio" name="profit" value="no"> No
+                    </form> -->
+                    <object data="assets/kyc.svg" type="image/svg+xml" ></object>
+                    <div class="buttonmain">
+                        <a class="next" onclick="prevStep(2)">Back</a>
+                        <a  class="next" onclick="submitForm()">Submit</a>
+    
+    
+                    </div>
+                   
+                </div>
+        
+                <!-- Success Message -->
+                <div class="success" id="success" style="display:none;">
+                    <div class="success-message">
+                        <img src="assets/tick.png" alt="">
+                        <h2>Verified Successful!</h2>
+                        <p>Your account has been verified</p>
+                        <button class="mobbutton" onclick="goHome()">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+            
+        
+
+
+            
+        <!-- <div id="navbar-container"></div> -->
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        function nextStep(step) {
+    document.querySelectorAll('.step').forEach((el) => el.style.display = 'none');
+    document.getElementById('step' + step).style.display = 'block';
+}
+
+function prevStep(step) {
+    document.querySelectorAll('.step').forEach((el) => el.style.display = 'none');
+    document.getElementById('step' + step).style.display = 'block';
+}
+
+function submitForm() {
+    // You can add form validation here if needed
+    document.querySelectorAll('.step').forEach((el) => el.style.display = 'none');
+    document.getElementById('success').style.display = 'flex';
+}
+
+function goHome() {
+    // Redirect to home or any other page
+    window.location.href = 'profile.html';
+}
+
+    </script>
+</body>
+</html>

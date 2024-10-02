@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+  .exchange-container {
+            
+            padding: 20px;
+        }
+        .exchange-container h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .exchange-container .date {
+            font-size: 12px;
+            color: gray;
+            margin-bottom: 20px;
+        }
+        .exchange-container .exchange-section {
+            margin-bottom: 20px;
+        }
+        .exchange-container .exchange-section label {
+            display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #007438;
+    font-weight: 700;
+        }
+        .exchange-container .exchange-section input,
+        .exchange-container .exchange-section select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .exchange-container .exchange-section input[type="text"] {
+            width: calc(100% - 16px);
+        }
+        .exchange-container .exchange-section .rate {
+            font-size: 12px;
+            color: gray;
+            margin-top: 5px;
+        }
+        .exchange-container .view-history {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+          
+            margin-bottom: 20px;
+        }
+        
+        .exchange-container .exchange-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .notifications h2 {
+    color: #1a7d3b;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+   
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="notifications"> 
+                <h2>Currency Exchange</h2>
+                
+            </div>
+
+            <div class="exchange-container">
+                <div class="date">Date for 20234-03-07/ 20:25:01 GMT +02:00</div>
+                <div class="exchange-section">
+                    <label for="exchange-from">Exchange From</label>
+                    <select id="exchange-from">
+                        <option>UAH</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                        <option>NZD</option>
+                        <option>CHF</option>
+                    </select>
+                    <input type="text" value="1500">
+                    <div class="rate">1 UAH = 0.025 EUR</div>
+                </div>
+                <div class="exchange-section">
+                    <label for="exchange-to">Exchange To</label>
+                    <select id="exchange-to">
+                        <option>UAH</option>
+                        <option>EUR</option>
+                        <option>USD</option>
+                        <option>NZD</option>
+                        <option>CHF</option>
+                    </select>
+                    <input type="text" value="1500">
+                    <div class="rate">1 UAH = 0.025 EUR</div>
+                </div>
+                <a href="#" class="view-history"><img src="assets/history.png" alt="">View Currency Transfer History</a>
+                <button class="mobbutton">Exchange</button>
+            </div>
+
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+            document.getElementById('userName').innerText = user.name;
+            document.getElementById('userName2').innerText = user.name;
+            document.getElementById('profilePicture').src = user.profilePicture;
+            document.getElementById('userEmail').innerText = user.email;
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };
+    
+    </script>
+</body>
+</html>

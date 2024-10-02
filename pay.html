@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+    .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.header-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 310px;
+    padding: 10px;
+}
+
+.header-1 h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+
+.header-1 h1 span {
+    font-size: 24px;
+    color: #007438;
+}
+
+.profile-icon img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.card-section {
+    
+    color: white;
+  
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.card-details {
+    font-size: 16px;
+}
+
+.card-details h2,
+.card-details h3,
+.card-details p {
+    margin: 5px 0;
+}
+
+.balance-insight {
+    text-align: center;
+    background-color: white;
+    color: #4CAF50;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 30px;
+    
+}
+.balance-insight h5 {
+    position: absolute;
+    top: 99px;
+    left: 212px;
+    font-weight: 600;
+    font-size: 22px;
+    color: #007438;
+
+}
+
+.actions-section {
+    display: flex;
+    justify-content: space-between;
+    
+    overflow-x: scroll;
+}
+
+.actions-section button {
+    
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    flex-grow: 1;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.transactions-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.transactions-section h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.transactions-section a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.card-details{
+    position: relative;
+}
+.card-details img{
+    padding-left: 11%;
+    
+}
+.cardholder-name{
+    position: absolute;
+    top: 135px;
+    left: 73px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.transaction p {
+    margin: 0;
+}
+
+.transaction .amount {
+    font-weight: bold;
+}
+
+.transaction .amount.negative {
+    color: red;
+}
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <img style="margin-right: 320px;padding-top: 10px;" src="assets/back_arrow.svg" alt="bck-btn" onclick="goBack()">
+
+
+
+            
+            <section class="card-section">
+                
+                <div class="balance-insight">
+                    <img src="assets/pay.png" alt="" draggable="false">
+                    <h5>BR <span id="balancea">20,000</span></h5>
+                </div>
+            </section>
+            <section class="actions-section">
+                <button><a href="moneysend.html"><img src="assets/app/1.png" alt="" draggable="false"></a></button>
+                <button><a href="loanpay.html"><img src="assets/app/2.png" alt="" draggable="false"></a></button>
+                <button><a href="requestloan.html"><img src="assets/app/3.png" alt=""draggable="false"></a></button>
+                <button><a href="etransfer.html"><img src="assets/app/4.png" alt=""draggable="false"></a></button>
+                <button><a href="paybill.html"><img src="assets/app/5.png" alt=""draggable="false"></a></button>
+                <button><a href="mobilerecharge.html"><img src="assets/app/6.png" alt=""draggable="false"></a></button>
+                <button><a href="exchangemoney.html"><img src="assets/app/7.png" alt=""draggable="false"></a></button>
+                <button><a href="transferglobally.html"><img src="assets/app/8.png" alt=""draggable="false"></a></button>
+                
+                
+            </section>
+            <section class="transactions-section">
+                <h3>Nearby Friends</h3>
+                <a href="sendmoney.html">View All</a>
+                
+            </section>
+            <section class="actions-section">
+                <button><a href="sendmoney.html"><img src="assets/pay/1.png" alt="" draggable="false"></a></button>
+                <button><a href="sendmoney2.html"></a><img src="assets/pay/2.png" alt="" draggable="false"></a></button>
+                <button><a href="sendmoney2.html"></a><img src="assets/pay/3.png" alt=""draggable="false"></a></button>
+                <button><a href="sendmoney2.html"></a><img src="assets/pay/4.png" alt=""draggable="false"></a></button>
+                <button><a href="sendmoney2.html"></a><img src="assets/pay/5.png" alt=""draggable="false"></a></button>
+               
+                
+            </section>
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+           
+            document.getElementById('balancea').innerText = user.balancea;
+            
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };
+    function goBack() {
+            window.history.back();
+        }</script>
+</body>
+</html>

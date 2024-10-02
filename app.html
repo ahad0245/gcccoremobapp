@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+    .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.header-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    max-width: 310px;
+    padding: 10px;
+}
+
+.header-1 h1 {
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+
+.header-1 h1 span {
+    font-size: 24px;
+    color: #007438;
+}
+
+.profile-icon img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+}
+
+.card-section {
+    
+    color: white;
+  
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+
+.card-details {
+    font-size: 16px;
+}
+
+.card-details h2,
+.card-details h3,
+.card-details p {
+    margin: 5px 0;
+}
+
+.balance-insight {
+    text-align: center;
+    background-color: white;
+    color: #4CAF50;
+    border-radius: 10px;
+    position: relative;
+    
+}
+.balance-insight h5 {
+    position: absolute;
+    top: -8px;
+    left: 228px;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+
+}
+
+.actions-section {
+    display: flex;
+    justify-content: space-between;
+    
+    overflow-x: scroll;
+}
+
+.actions-section button {
+    
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    flex-grow: 1;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.transactions-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.transactions-section h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.transactions-section a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.card-details{
+    position: relative;
+}
+.card-details img{
+    padding-left: 11%;
+    
+}
+.cardholder-name{
+    position: absolute;
+    top: 135px;
+    left: 73px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.transaction p {
+    margin: 0;
+}
+
+.transaction .amount {
+    font-weight: bold;
+}
+
+.transaction .amount.negative {
+    color: red;
+}
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+
+
+            <div class="header-1">
+                <h1 id="greeting">Good morning,<br><span id="userName">Alex Wilson</span></h1>
+                <div style="display: flex; align-items: center;width: 30px;    gap: 20px;">
+                <a href="notification.html"><img style="    width: 20px;height: 22px;" src="assets/bellicon.png" alt="" draggable="false"></a>
+                <div class="profile-icon">
+                   
+                    <a href="profile.html"> <img id="profilePicture" src="" alt="Profile Picture" draggable="false"></a>
+                </div>
+            </div>
+            </div>
+            <section class="card-section">
+                <div class="card">
+                    <div class="card-details">
+                        <img  src="assets/card.png" alt="" draggable="false">
+                        <p id="userName2" class="cardholder-name" >ALEX WILSON</p>
+                    </div>
+                    
+                </div>
+                <div class="balance-insight">
+                    <img src="assets/card2.png" alt="" draggable="false">
+                    <h5>BR <span id="balancea">20,000</span></h5>
+                </div>
+            </section>
+            <section class="actions-section">
+                <button><a href="moneysend.html"><img src="assets/app/1.png" alt="" draggable="false"></a></button>
+                <button><a href="loanpay.html"><img src="assets/app/2.png" alt="" draggable="false"></a></button>
+                <button><a href="requestloan.html"><img src="assets/app/3.png" alt=""draggable="false"></a></button>
+                <button><a href="etransfer.html"><img src="assets/app/4.png" alt=""draggable="false"></a></button>
+                <button><a href="paybill.html"><img src="assets/app/5.png" alt=""draggable="false"></a></button>
+                <button><a href="mobilerecharge.html"><img src="assets/app/6.png" alt=""draggable="false"></a></button>
+                <button><a href="exchangemoney.html"><img src="assets/app/7.png" alt=""draggable="false"></a></button>
+                <button><a href="transferglobally.html"><img src="assets/app/8.png" alt=""draggable="false"></a></button>
+                
+            </section>
+            <section class="transactions-section">
+                <h3>Transactions</h3>
+                <a href="transaction.html">View All</a>
+                <div class="transaction">
+                    <p>Salary</p>
+                    <p>5:05 PM - Aug 22, 2029</p>
+                    <p class="amount">BR 12,500</p>
+                </div>
+                <div class="transaction">
+                    <p>WiFi Bill</p>
+                    <p>4:05 PM - Aug 22, 2029</p>
+                    <p class="amount negative">BR 2,500</p>
+                </div>
+            </section>
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        window.onload = function() {
+            // Retrieve user data from localStorage
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                // Update UI with user data
+                document.getElementById('userName').innerText = user.name;
+                document.getElementById('userName2').innerText = user.name;
+                document.getElementById('balancea').innerText = user.balancea;
+                document.getElementById('profilePicture').src = user.profilePicture;
+                document.getElementById('userEmail').innerText = user.email;
+            } else {
+                // Redirect to login page if no user data is found
+                window.location.href = 'login.html';
+            }
+
+            // Call the function to display the greeting
+            greetUser();
+        };
+
+        function greetUser() {
+            const now = new Date();
+            const hours = now.getHours();
+            const greetingElement = document.getElementById("greeting");
+
+            if (hours < 12) {
+                greetingElement.textContent = "Good morning";
+            } else {
+                greetingElement.textContent = "Good evening";
+            }
+        }
+    </script>
+</body>
+</html>

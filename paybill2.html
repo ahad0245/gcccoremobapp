@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+    .paybill-Main {
+        padding: 20px;
+    }
+
+    .paybill_text {
+        display: flex;
+        align-self: flex-start;
+        width: 100%;
+    }
+
+    .paybill_text h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0px;
+        margin-bottom: 5px;
+    }
+
+    .paybillsearchbox {
+        display: flex;
+        align-items: center;
+
+        padding-left: 10px;
+        padding-right: 3px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        border-style: solid;
+        border-width: 2px;
+        width: 314px;
+        height: 29px;
+        border-color: rgba(0, 116, 56, 1);
+        border-radius: 8px;
+    }
+
+    .paybillsearchbox img {
+        margin-right: 12px;
+    }
+
+    .ptag {
+        color: rgba(71, 71, 71, 1);
+        font-size: 12px;
+        font-weight: 400;
+        display: flex;
+        /* / background-color: aquamarine; / */
+    }
+
+    .biller-input {
+        border: none;
+        outline: none;
+        width: 90%;
+    }
+
+    .allbiller {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .lists {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        width: 100%;
+        /* / border-bottom: rgb(0, 0, 0); / */
+        padding-bottom: 10px;
+        padding-right: 20px;
+        /* / justify-content: space-between; / */
+        /* / align-items: center; / */
+        margin-top: 20px;
+    }
+
+    .list-heading {
+        font-weight: 500;
+        font-size: 14px;
+        text-align: left;
+
+    }
+
+    .subtext {
+        font-size: 10px;
+        font-weight: 400;
+        color: rgba(71, 71, 71, 1);
+        margin: 0px;
+        /* / margin-top: 26px; / */
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="paybill-Main">
+                <div class="paybill_text">
+                    <h3>Biller</h3>
+                </div>
+                <div class="paybillsearchbox">
+                    <img src="assets/persone-outline.svg">
+                    <input type="text" class="biller-input" placeholder="DESCO">
+                </div>
+                <div class="ptag">
+
+                    <p>Enter Biller Name or Biller Number</p>
+                </div>
+                <div class="allbiller">
+                    All Billers
+                    <div class="lists">
+                        <img src="assets/logo-1 1.svg">
+                        <div class="list-heading">West Zone Power Distributor
+                            Company <div class="subtext">1017</div>
+                        </div>
+                    </div>
+                    <div class="lists">
+                        <img src="assets/logo-1 1.svg">
+                        <div class="list-heading">NESCO Postpaid
+                            Company <div class="subtext">1017</div>
+                        </div>
+                    </div>
+                    <div class="lists">
+                        <img src="assets/logo-1 1.svg">
+                        <div class="list-heading">NESCO Prepaid
+                            Company <div class="subtext">1017</div>
+                        </div>
+                    </div>
+                    <div class="lists">
+                        <img src="assets/logo-1 1.svg">
+                        <div class="list-heading">DPDC
+                            Company <div class="subtext">1017</div>
+                        </div>
+                    </div>
+                    <div class="lists">
+                        <img src="assets/logo-1 1.svg">
+                        <div class="list-heading">West Zone Power Distributor Company
+                            Company <div class="subtext">1017</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    
+    <!-- <script src="script.js"></script> -->
+    <script>window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+            document.getElementById('userName').innerText = user.name;
+            document.getElementById('userName2').innerText = user.name;
+            document.getElementById('profilePicture').src = user.profilePicture;
+            document.getElementById('userEmail').innerText = user.email;
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };</script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const accountTypes = document.querySelectorAll('.lists > div');
+        accountTypes.forEach(function (accountType) {
+            accountType.addEventListener('click', function () {
+                window.location.href = 'paybill3.html';
+            });
+            accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+        });
+    });
+    const button = document.querySelector(".lists");
+
+// Add an event listener to the button
+button.addEventListener('click', function() {
+    // Redirect to the email verification page
+    window.location.href = 'paybill3.html';
+});
+    </script>
+</body>
+</html>

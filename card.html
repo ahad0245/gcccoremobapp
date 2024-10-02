@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Screen Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="include-navbar.js" defer></script>
+
+    <style>
+        .statbutton1 {
+            width: 50%;
+            height: 30px;
+            border-radius: 5px;
+            background: #007438;
+            border: 1px solid #007438;
+            color: aliceblue;
+        }
+
+        .statbutton2 {
+            width: 50%;
+            height: 30px;
+            border-radius: 5px;
+            color: #007438;
+            border: 1px solid #007438;
+        }
+
+        .statbuttonmain {
+            display: flex;
+            gap: 5px;
+            width: 358px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .transactions-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .transactions-section h3 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .transactions-section a {
+            color: #4CAF50;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .card-details {
+            position: relative;
+        }
+
+        .card-details img {
+            padding-left: 11%;
+        }
+
+        .cardholder-name {
+            position: absolute;
+            top: 135px;
+            left: 73px;
+        }
+
+        .transaction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .transaction p {
+            margin: 0;
+        }
+
+        .transaction .amount {
+            font-weight: bold;
+        }
+
+        .transaction .amount.negative {
+            color: red;
+        }
+
+        .set-limit input, .set-limit button, .success button, .block-confirmation button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .set-limit input {
+            border: 1px solid #ccc;
+        }
+
+        .set-limit button, .success button, .block-confirmation button {
+            background-color: #004d00;
+            color: white;
+            cursor: pointer;
+        }
+
+        .set-limit button:hover, .success button:hover, .block-confirmation button:hover {
+            background-color: #003300;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="mobcontainer active">
+            <img style="margin-right: 320px;padding-top: 10px;" src="assets/back_arrow.svg" alt="bck-btn" onclick="goBack()">
+
+            <h3 class="appheading">Cards</h3>
+            <h3 style="text-align: left; margin-left: 20px;" class="appheading">Your Cards</h3>
+            <h5 style="text-align: left; margin-left: 20px;">Manage with Ease.</h5>
+           
+           
+           
+
+            <!-- <div class="statbuttonmain">
+                <button class="statbutton1">Income</button>
+                <button class="statbutton2">Expense</button>
+            </div> -->
+
+            <div class="container">
+                <!-- Card List -->
+                <div class="card-list" id="cardList">
+                  
+                    <div class="card" >
+                        
+                            <img src="assets/card/1.png" alt="Card 1" draggable="false">
+                    </div>
+                    <div class="card">
+                        
+                            <img src="assets/card/2.png" alt="Card 2" draggable="false">
+                    </div>
+                    
+                </div>
+        
+                <!-- Set Limit Form -->
+                
+            </div>
+                    
+            
+
+
+            <div id="navbar-container"></div>
+        </div>
+    </main>
+<script>function goBack() {
+    window.history.back();
+}</script>
+    
+</body>
+</html>

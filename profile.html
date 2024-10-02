@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+    .profile-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .name {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+    .phone {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+        cursor: pointer;
+        text-decoration: none; /* Add this to remove default link styling */
+        color: inherit; /* Add this to inherit the text color */
+    }
+    .menu-item:first-child {
+        border-top: none;
+    }
+    .menu-item img {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+    }
+    .menu-item .text {
+        text-align: left;
+    }
+    .menu-item .title {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .menu-item .subtitle {
+        font-size: 14px;
+        color: #888;
+    }
+</style>
+
+</head>
+<body>
+    <main>
+        <div class="mobcontainer">
+            <img style="margin-right: 320px;padding-top: 10px;" src="assets/back_arrow.svg" alt="bck-btn" onclick="goBack()">
+
+            <div class="container">
+                <img id="profilePicture" src="" alt="Profile Image" class="profile-img">
+                <div id="userName" class="name">Alex Wilson</div>
+                <div id="userEmail" class="phone">017254-07880</div>
+                
+                <a href="kycverification.html" class="menu-item">
+                    <img src="assets/profile/1.png" alt="KYC Verification">
+                    <div class="text">
+                        <div class="title">KYC Verification</div>
+                        <div class="subtitle">Trust and Security.</div>
+                    </div>
+                </a>
+                
+                <a href="theme.html" class="menu-item">
+                    <img src="assets/profile/2.png" alt="Theme">
+                    <div class="text">
+                        <div class="title">Theme</div>
+                        <div class="subtitle">Personalize Your Style.</div>
+                    </div>
+                </a>
+                
+                <a href="notification2.html" class="menu-item">
+                    <img src="assets/profile/3.png" alt="Notification">
+                    <div class="text">
+                        <div class="title">Notification</div>
+                        <div class="subtitle">Stay Informed.</div>
+                    </div>
+                </a>
+                
+                <a href="chatsupport.html" class="menu-item">
+                    <img src="assets/profile/4.png" alt="Support">
+                    <div class="text">
+                        <div class="title">Support</div>
+                        <div class="subtitle">We've Got Your Back.</div>
+                    </div>
+                </a>
+                
+                <a href="login.html" class="menu-item">
+                    <img src="assets/profile/5.png" alt="Logout">
+                    <div class="text">
+                        <div class="title">Logout</div>
+                    </div>
+                </a>
+            </div>
+            <div id="navbar-container"></div>
+        </div>
+    </main>
+    <script>
+        window.onload = function() {
+            // Retrieve user data from localStorage
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                // Update UI with user data
+                document.getElementById('userName').innerText = user.name;
+                document.getElementById('profilePicture').src = user.profilePicture;
+                document.getElementById('userEmail').innerText = user.email;
+            } else {
+                // Redirect to login page if no user data is found
+                window.location.href = 'login.html';
+            }
+        };
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

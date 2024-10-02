@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>.icon img {
+        width: 60px;
+        height: 60px;
+    }
+    .container{
+        padding: 20px;
+    }
+    
+    
+    .instructions {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+    
+    .instructions li {
+        display: flex;
+        align-items: start;
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #333;
+        text-align: left;
+    }
+    .instructions li img{
+        padding-right: 5px;
+    }
+    
+   </style>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <img style="margin-top: 90px;" src="assets/Group 1000003409.png" alt="">
+            <div class="container">
+            <div class="icon">
+                              
+            </div>
+            <ol class="instructions">
+                <li> <img src="assets/uploadpic/Group 251.png" alt=""> Remove your eye glass (if have any).</li>
+
+                <li><img src="assets/uploadpic/Group 262.png" alt="">Place your face in photo frame.</li>
+                <li><img src="assets/uploadpic/Group 273.png" alt="">Make sure there is enough light around.</li>
+                <li><img src="assets/uploadpic/Group 284.png" alt="">Do not shake your face when capturing photo.</li>
+                <li><img src="assets/uploadpic/Group 295.png" alt="">Blink your eyes several times to capture photo.</li>
+            </ol>
+            <button class="mobbutton">Next</button>
+        </div>
+        </div>
+
+
+            
+     </div>
+        
+    </main>
+    <script>
+        const button = document.querySelector(".mobbutton");
+
+// Add an event listener to the button
+button.addEventListener('click', function() {
+   // Redirect to the email verification page
+   window.location.href = 'termandcondition.html';
+});
+   </script>
+    <script src="script.js"></script>
+</body>
+</html>

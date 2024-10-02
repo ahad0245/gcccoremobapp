@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+   .statbutton1{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    background: #007438;
+    border:1px solid #007438;
+    color: aliceblue;
+
+   }
+   .statbutton2{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    color: #007438;
+    border:1px solid #007438;
+   }
+   .statbuttonmain{
+    display: flex;
+    gap: 5px;
+    width: 358px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+   }
+
+.transactions-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.transactions-section h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.transactions-section a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.card-details{
+    position: relative;
+}
+.card-details img{
+    padding-left: 11%;
+    
+}
+.cardholder-name{
+    position: absolute;
+    top: 135px;
+    left: 73px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.transaction p {
+    margin: 0;
+}
+
+.transaction .amount {
+    font-weight: bold;
+}
+
+.transaction .amount.negative {
+    color: red;
+}
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+
+            <h3 class="appheading">Chat Support</h3>
+            
+            
+            <object data="assets/chatsupport.svg" type="image/svg+xml"></object>
+            
+
+        
+
+            
+        
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+            document.getElementById('userName').innerText = user.name;
+            document.getElementById('userName2').innerText = user.name;
+            document.getElementById('profilePicture').src = user.profilePicture;
+            document.getElementById('userEmail').innerText = user.email;
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };</script>
+</body>
+</html>

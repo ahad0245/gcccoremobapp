@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+     .container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.friends-list {
+    margin-top: 10px;
+    overflow-x: auto;
+    height: 467px;
+}
+
+.friends-list h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.friend:last-child {
+    border-bottom: none;
+}
+
+.friend img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-info .name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+
+.friend-info .number {
+    font-size: 14px;
+    color: #777;
+}
+        .notifications h2 {
+    color: #1a7d3b;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+   
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="notifications"> 
+                <h2>Send Money</h2>
+                <h5>Select</h5>
+            </div>
+
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search name or number">
+                </div>
+                <div class="friends-list">
+                    <h2>Nearby Friends</h2>
+                    
+                    <div class="friend">
+                        <img src="assets/profile/Mask group (2).png" alt="Profile Picture">
+                        <div class="friend-info">
+                            <p class="name">Sara John</p>
+                            <p class="number">(808) 555-0111</p>
+                        </div>
+                    </div>
+                    <div class="friend">
+                        <img src="assets/profile/Mask group (3).png" alt="Profile Picture">
+                        <div class="friend-info">
+                            <p class="name">Abhimanyu</p>
+                            <p class="number">(229) 555-0109</p>
+                        </div>
+                    </div>
+                    <div class="friend">
+                        <img src="assets/profile/Mask group (4).png" alt="Profile Picture">
+                        <div class="friend-info">
+                            <p class="name">Aadhira</p>
+                            <p class="number">(684) 555-0102</p>
+                        </div>
+                    </div>
+                    <div class="friend">
+                        <img src="assets/profile/Mask group (5).png" alt="Profile Picture">
+                        <div class="friend-info">
+                            <p class="name">Viraj Gupta</p>
+                            <p class="number">(505) 555-0125</p>
+                        </div>
+                    </div>
+                    <div class="friend">
+                        <img src="assets/profile/Mask group (6).png" alt="Profile Picture">
+                        <div class="friend-info">
+                            <p class="name">Advaith</p>
+                            <p class="number">(207) 555-0119</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <script src="script.js"></script>
+    <script>
+ document.addEventListener("DOMContentLoaded", function() {
+        const accountTypes = document.querySelectorAll('.friend > div');
+        accountTypes.forEach(function(accountType) {
+            accountType.addEventListener('click', function() {
+                window.location.href = 'sendmoney2.html';
+            });
+            accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+        });
+    });
+
+
+    </script>
+</body>
+</html>

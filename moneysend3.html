@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Screen Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .mobcontainer {
+            overflow: auto;
+            padding: 10px;
+        }
+
+        .mobcontainer::-webkit-scrollbar {
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h3 {
+            display: flex;
+            color: #007438;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+
+
+        .next-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 257px;
+            height: 50px;
+            background-color: #007438;
+            border-radius: 6.47px;
+            color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10%;
+            cursor: pointer;
+        }
+        
+        .SendMoney{
+            margin-top: 20%;
+        }
+
+        .passwordcontainer {
+            padding: 10px;
+            border: 2px solid #007438;
+            border-radius: 7.26px;
+            width: 314px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12%;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .passwordcontainer img {
+            margin-right: 10px;
+        }
+
+        .passwordcontainer input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-size: 16px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="header">
+                <img src="assets/back_arrow.svg" alt="bck-btn" onclick="goBack()">
+                <h3>Send Money</h3>
+                <div></div>
+            </div>
+            <div class="SendMoney">
+                <img src="assets/SendMoney2.svg" alt="snfm">
+            </div>
+
+            <div class="passwordcontainer">
+                <img src="assets/PasswordLock.svg" alt="Password Lock Icon">
+                <input type="password" placeholder="Enter your password">
+            </div>
+
+            <div class="next-btn">
+                Next
+            </div>
+        </div>
+
+
+    </main>
+    <script>
+    
+    document.querySelector(".next-btn").addEventListener("click", function() {
+    window.location.href = 'moneysend4.html';
+});
+    document.addEventListener("DOMContentLoaded", function () {
+            const accountTypes = document.querySelectorAll('.account-types > div');
+            accountTypes.forEach(function (accountType) {
+                accountType.addEventListener('click', function () {
+                    window.location.href = 'AcccountRegistration.html';
+                });
+                accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+            });
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script>
+        function toggleTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.querySelectorAll('.theme-option').forEach(element => {
+                    element.classList.add('dark-mode');
+                });
+            } else {
+                document.body.classList.remove('dark-mode');
+                document.querySelectorAll('.theme-option').forEach(element => {
+                    element.classList.remove('dark-mode')
+                });
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll('.cards');
+
+            cards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    // Remove 'selected' class from all cards
+                    cards.forEach(function (c) {
+                        c.classList.remove('selected');
+                    });
+                    // Add 'selected' class to the clicked card
+                    card.classList.add('selected');
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

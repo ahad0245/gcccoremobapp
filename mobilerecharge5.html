@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Screen Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .mobcontainer {
+            overflow: auto;
+            position: relative;
+        }
+
+        .mobcontainer::-webkit-scrollbar {
+            display: none;
+        }
+
+        .MobileRecharge {
+            margin-top: 30%;
+        }
+        .MobileRecharge img{
+            margin-bottom: 49%;
+        }
+
+        / Hide scrollbar for IE, Edge, and Firefox /
+        .mobcontainer {
+            -ms-overflow-style: none;
+            / IE and Edge /
+            scrollbar-width: none;
+            / Firefox /
+        }
+
+        .next-btn {
+        
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 70px;
+        }
+
+   
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="MobileRecharge">
+                <img src="assets/MobileRecharge3.svg" alt="svg">
+                
+
+              
+
+
+                <div class="next-btn" onclick="handleViewReceiptClick()">
+                    <img src="assets/paybill-hld-btn.svg" alt="svg">
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const accountTypes = document.querySelectorAll('.account-types > div');
+            accountTypes.forEach(function (accountType) {
+                accountType.addEventListener('click', function () {
+                    window.location.href = 'AcccountRegistration.html';
+                });
+                accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+            });
+        });
+        function handleBackToHomeClick() {
+            alert('Going back to home');
+            backtoHome();
+        }
+
+        function handleViewReceiptClick() {
+            window.location.href = 'mobilerecharge6.html';
+            backtoHome();
+        }
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

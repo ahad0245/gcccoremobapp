@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Screen Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="include-navbar.js" defer></script>
+    <style>
+        .mobcontainer {
+            overflow: auto;
+
+        }
+
+        .mobcontainer::-webkit-scrollbar {
+            display: none;
+        }
+
+        .MobileRecharge {
+            margin-top: 30%;
+        }
+        .MobileRecharge img{
+            margin-bottom: 5%;
+        }
+
+        / Hide scrollbar for IE, Edge, and Firefox /
+        .mobcontainer {
+            -ms-overflow-style: none;
+            / IE and Edge /
+            scrollbar-width: none;
+            / Firefox /
+        }
+
+        .next-btn {
+            display: flex;
+            width: 309px;
+            height: 46px;
+            background-color: rgba(0, 116, 56, 1);
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 120px;
+        }
+        .notifications h2 {
+    color: #1a7d3b;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+   
+    </style>
+</head>
+
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="notifications"> 
+                <h2>Send Money</h2>
+              
+            </div>
+            <div class="MobileRecharge">
+                <img src="assets/MobiletopUp.svg" alt="svg">
+                <div class="next-btn" onclick="handleViewReceiptClick()">
+                   Next
+                </div>
+            </div>
+            <!-- <div id="navbar-container"></div> -->
+        </div>
+
+
+    </main>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const accountTypes = document.querySelectorAll('.account-types > div');
+            accountTypes.forEach(function (accountType) {
+                accountType.addEventListener('click', function () {
+                    window.location.href = 'AcccountRegistration.html';
+                });
+                accountType.style.cursor = 'pointer';  // Optional: Change cursor to pointer to indicate clickability
+            });
+        });
+        function handleBackToHomeClick() {
+            alert('Going back to home');
+            backtoHome();
+        }
+
+        function handleViewReceiptClick() {
+            window.location.href = 'sendmoney3.html';
+        }
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

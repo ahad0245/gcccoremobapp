@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Screen Layout</title>
+<link rel="stylesheet" href="styles.css">
+<script src="include-navbar.js" defer></script>
+
+<style>
+     .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .bill-type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+        }
+        .bill-type img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .bill-type span {
+            font-size: 14px;
+        }
+        .notifications h2 {
+    color: #1a7d3b;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+   
+</style>
+
+</head>
+<body>
+    <!-- <header>
+        <h1>Welcome To GCC Core Mobile Application</h1>
+    </header> -->
+    <main>
+        <div class="mobcontainer">
+            <div class="notifications"> 
+                <h2>Pay Bill</h2>
+                <h5>Bill Type</h5>
+            </div>
+
+            <div class="container">
+                
+                <div class="bill-type">
+                    <img src="assets/paybill/1.png" alt="Electricity">
+                    <span>Electricity</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/2.png" alt="Gas">
+                    <span>Gas</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/3.png" alt="Internet">
+                    <span>Internet</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/4.png" alt="Water">
+                    <span>Water</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/5.png" alt="TV & Telephone">
+                    <span>TV & Telephone</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/6.png" alt="Education">
+                    <span>Education</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/7.png" alt="Bank & FI">
+                    <span>Bank & FI</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/8.png" alt="Insurance">
+                    <span>Insurance</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/9.png" alt="Other">
+                    <span>Other</span>
+                </div>
+                <div class="bill-type">
+                    <img src="assets/paybill/10.png" alt="Credit Card">
+                    <span>Credit Card</span>
+                </div>
+            </div>
+
+
+
+
+            
+        <div id="navbar-container"></div>
+</div>
+        
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script>window.onload = function() {
+        // Retrieve user data from localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            // Update UI with user data
+            document.getElementById('userName').innerText = user.name;
+            document.getElementById('userName2').innerText = user.name;
+            document.getElementById('profilePicture').src = user.profilePicture;
+            document.getElementById('userEmail').innerText = user.email;
+        } else {
+            // Redirect to login page if no user data is found
+            window.location.href = 'login.html';
+        }
+    };
+    const button = document.querySelector(".bill-type");
+
+// Add an event listener to the button
+button.addEventListener('click', function() {
+    // Redirect to the email verification page
+    window.location.href = 'paybill2.html';
+});
+    </script>
+</body>
+</html>
